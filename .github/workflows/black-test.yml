@@ -1,0 +1,21 @@
+name: black-formatting before/after
+
+on:
+  push:
+    branches: ["test/black-check-mode"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  before:
+    name: before (SuffolkLITLab main)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: SuffolkLITLab/ALActions/black-formatting@main
+  after:
+    name: after (check mode)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: adamfriedl/ALActions/black-formatting@black-check-mode
