@@ -1,0 +1,16 @@
+name: pythontests annotations test
+
+on:
+  push:
+    branches: ["test/pythontests-annotations"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  after:
+    name: after (matchers)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: adamfriedl/ALActions/pythontests@pythontests-annotations
